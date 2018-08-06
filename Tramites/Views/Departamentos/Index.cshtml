@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Tramites.Models.Departamento>
+
+@{
+    ViewBag.Title = "Departamentos";
+}
+
+<h2>Departamentos</h2>
+
+<p>
+    @Html.ActionLink("Crear Departamento", "Create", new { }, new { @class = " btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais.DescripcionPais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionDepartamento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pais.DescripcionPais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionDepartamento)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.CodigoDepartamento }, new { @class = " btn btn-warning" })
+            @Html.ActionLink("Detalles", "Details", new { id=item.CodigoDepartamento }, new { @class = " btn btn-info" })
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.CodigoDepartamento }, new { @class = " btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

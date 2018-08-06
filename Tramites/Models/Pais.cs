@@ -12,6 +12,9 @@ namespace Tramites.Models
         public int CodigoPais { get; set; }
 
         [Required(ErrorMessage = "El Campo es Obligatorio") ]
+        [Display(Name ="Nombre Pais")]
         public string DescripcionPais { get; set; }
+
+        public virtual ICollection<Departamento> Departamentos { get; set; }
     }
 }

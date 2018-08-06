@@ -14,5 +14,7 @@ namespace Tramites.Models
         }
 
         public System.Data.Entity.DbSet<Tramites.Models.Pais> Pais { get; set; }
+
+        public System.Data.Entity.DbSet<Tramites.Models.Departamento> Departamentoes { get; set; }
     }
 }
